@@ -719,6 +719,7 @@ img {
     @include mediaQuery(tablet) {
       display: flex;
       flex-wrap: wrap;
+      position: relative;
     }
     .content-img {
       width: 100%;
