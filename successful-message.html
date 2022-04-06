@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarkoCreativos</title>
+    <link
+      rel="shortcut icon"
+      href="https://markocreativos.com/images/otros/favicon.png"
+      type="image/x-icon"
+    />
+    <meta property="og:title" content="MarkoCreativos" />
+    <meta
+      name="description"
+      content="Somos un equipo creativo que nos enfocamos en dar la mejor imagen corporativa a nuestros clientes. Profesionales en la carrera de dirección, diseño gráfico y publicitario, transformamos ideas en emociones y experiencias, que generan en más negocio a nuestros clientes."
+    />
+    <meta
+      name="keywords"
+      content="Diseño gráfico, diseño web, diseño banners, diseño flyers,web,banners,flyers,publicidad,paneles"
+    />
+    <meta name="author" content="noeL moriano (EneDev)" />
+    <meta property="og:url" content="https://markocreativos.com" />
+    <meta
+      property="og:image"
+      content="https://markocreativos.com/images/otros/favicon.png"
+    />
+
+    <!--FONTAWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--STYLES CSS-->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container-successful-message">
+        <img src="./images/sections/services/toy-black.png" alt="toy black markocreativos" class="img-toy-black"/>
+
+      <div class="container-logo">
+        <div class="item-logo">
+          <img
+            loading="lazy"
+            src="images/header/logo.png"
+            alt="Marko creativo logo"
+          />
+        </div>
+      </div>
+      <header class="container-line">
+        <div class="line"></nav>
+      </header>
+
+      
+        <div class="container-success">
+          <div class="success-message">
+          <div class="icon-success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+          <div class="text-success">
+            <h1>¡Gracias por tu mensaje!</h1>
+            <p>
+              Nos pondremos en contacto contigo a la brevedad.
+            </p>
+          </div>
+          <div class="item-button">
+            <button class="button-back" id="btn-go-back">Regresar</button>
+          </div>
+          </div>  
+        </div>
+    </section>
+
+    <!--**************** end GALLERY LIGHBOX *********************-->
+
+    <script src="./js/successful-message.js"></script>
+
+    <!-- GetButton.io widget -->
+    <script type="text/javascript">
+      (function () {
+        var options = {
+          //facebook: "379873592208624", // Facebook page ID
+          whatsapp: "+51987523496", // WhatsApp number
+          call_to_action: "Escribemos por wsp o messenger!", // Call to action
+          button_color: "#d3d800", // Color of button
+          position: "left", // Position may be 'right' or 'left'
+          order: "whatsapp,facebook", // Order of buttons
+          zindex: 999,
+        };
+        var proto = document.location.protocol,
+          host = "getbutton.io",
+          url = proto + "//static." + host;
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = url + "/widget-send-button/js/init.js";
+        s.onload = function () {
+          WhWidgetSendButton.init(host, proto, options);
+        };
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      })();
+    </script>
+  </body>
+</html>

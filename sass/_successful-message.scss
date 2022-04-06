@@ -1,0 +1,122 @@
+.container-successful-message {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background: setColor(black);
+  display: grid;
+  grid-template-rows: 17% 1% 82%;
+  position: relative;
+  font-size: 14px;
+  overflow: hidden;
+  @include mediaQuery(tablet) {
+    font-size: 11px;
+  }
+
+  .img-toy-black {
+    position: absolute;
+    top: 23%;
+    right: 2%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 20em;
+    height: auto;
+    z-index: 100;
+    @include mediaQuery(tablet) {
+      top: 32%;
+      right: -66px;
+    }
+  }
+
+  .container-logo {
+    width: 100%;
+    background: setColor(black);
+    @include flexCenter();
+    .item-logo {
+      width: 100%;
+      height: 100%;
+      @include flexCenter();
+      position: relative;
+      img {
+        width: 12em;
+        height: auto;
+        @include mediaQuery(tablet) {
+          width: 16em;
+        }
+      }
+    }
+  }
+
+  .container-line {
+    width: 100%;
+    background: setColor(yellow);
+  }
+
+  .container-success {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-terciary-extra-bold;
+    z-index: 200;
+    padding: 1rem 0;
+    .success-message {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .icon-success {
+        font-size: 5rem;
+        color: setColor(yellow);
+        margin: 1rem auto;
+      }
+      .text-success {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: setColor(yellow);
+        text-align: center;
+        padding: 0 0.2rem;
+        h1 {
+          font-size: 1.7em;
+          margin-bottom: 0.5rem;
+          color: setColor(yellow);
+
+          text-shadow: 2px 2px 0 #000000cf, 2px -2px 0 #000000cf,
+            -2px 2px 0 #000000cf, -2px -2px 0 #000000cf, 2px 0px 0 #000000cf,
+            0px 2px 0 #000000cf, -2px 0px 0 #000000cf, 0px -2px 0 #000000cf;
+          @include mediaQuery(tablet) {
+            font-size: 1.2em;
+          }
+        }
+        p {
+          color: setColor(white);
+          font-size: 1em;
+          @include mediaQuery(tablet) {
+            font-size: 0.9em;
+          }
+        }
+      }
+      .item-button {
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .button-back {
+          margin: 1rem auto;
+          width: 100%;
+          height: auto;
+          background: setColor(yellow);
+          color: setColor(black);
+          font-size: 1.2rem;
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          padding: 0.7rem 1rem;
+        }
+      }
+    }
+  }
+}

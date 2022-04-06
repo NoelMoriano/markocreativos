@@ -70,6 +70,7 @@ $fontSize: (
   animation: pulseBtnOpenForm 1s infinite;
   transition: all 0.2 ease-in-out;
   z-index: 99999;
+  font-size: 1.4em;
 
   &:hover {
     animation: none !important;
@@ -108,18 +109,26 @@ $fontSize: (
 }
 
 //STYLES FATHER CONTAINER
-.form-contact-container {
+.container-form-contact-us-fixed {
   display: flex;
   position: fixed;
   z-index: 16999999;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   @media (min-width: $tablet) {
     width: auto;
     right: 0;
     top: 1%;
+    bottom: inherit;
+    left: inherit;
   }
 
   form {
     padding: 0;
+    background-color: #ffffff;
+    width: 100%;
     @media (min-width: $tablet) {
       width: 420px;
       display: flex;
@@ -127,6 +136,7 @@ $fontSize: (
       align-items: center;
       justify-content: center;
       color: setColor(black);
+      background-color: transparent;
 
       .element-bg-color {
         background-color: #ffffff;
@@ -149,7 +159,7 @@ $fontSize: (
       }
       .image-form-contact {
         width: auto;
-        height: 250px;
+        height: 233px;
       }
       .item-icon-close-form {
         font-size: 2rem;
@@ -333,7 +343,7 @@ $fontSize: (
   }
 
   .item-open-form {
-    padding: 7px 0.7rem;
+    padding: 0 0.7rem;
   }
 
   .needs-validation-form {

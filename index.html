@@ -35,6 +35,7 @@
     />
 
     <!--Import customers logos-->
+    <script src="./js/global.js"></script>
     <script src="./js/customers.js"></script>
     <script src="./js/briefcase-images.js"></script>
     <script src="./js/wow.js"></script>
@@ -110,10 +111,10 @@
       <div class="container-slider">
         <div id="slideshow">
           <div class="control">
-            <button id="previous">
+            <button class="btn-previous" id="previous">
               <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </button>
-            <button id="next">
+            <button class="btn-next" id="next">
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </button>
           </div>
@@ -485,17 +486,16 @@
             </div>
             <div class="content-form-contact">
               <form
-                action="./send-form/form-send-footer.php"
-                method="POST"
+                id="form-contact-us-footer"
                 class="form-contact"
-                onsubmit="return validateFormContact()"
+                novalidate
+                onsubmit="() => validateFormContact()"
               >
                 <div class="item-group-form">
                   <label for="">Nombres y Apellidos:</label>
                   <input
                     type="text"
                     id="input-name-and-lastname"
-                    name="input-name-and-lastname-fo"
                     placeholder="Ingrese nombres y apellidos"
                   />
                 </div>
@@ -506,7 +506,6 @@
                     <input
                       type="number"
                       id="input-phone"
-                      name="input-phone-fo"
                       placeholder="Ingrese telefono ó celular"
                     />
                   </div>
@@ -515,7 +514,6 @@
                     <input
                       type="text"
                       id="input-email"
-                      name="input-email-fo"
                       placeholder="Ingrese e-mail"
                     />
                     <div style="color: red !important; font-size: 0.8rem">
@@ -532,7 +530,6 @@
                   <label for="">Mensaje:</label>
                   <textarea
                     id="text-area-description"
-                    name="text-area-message-fo"
                     cols="30"
                     rows="6"
                     max-col="30"
@@ -555,13 +552,17 @@
           <div class="item-footer-redes">
             <div class="item-contact">
               <div class="icon">
-                <a href="tel:+51987523496"><i class="fa fa-phone"></i></a>
+                <a href="tel:+51987523496" alt="MarkoCreativos telefóno"
+                  ><i class="fa fa-phone"></i
+                ></a>
               </div>
               <span><a href="tel:+51987523496">987 523 496</a></span>
             </div>
             <div class="item-contact">
               <div class="icon">
-                <a href="mailto:markocreativos@gmail.com"
+                <a
+                  href="mailto:markocreativos@gmail.com"
+                  alt="MarkoCreativos email"
                   ><i class="fa fa-envelope"></i
                 ></a>
               </div>
@@ -593,12 +594,14 @@
     </script>
 
     <!--START ADD CODE External-->
-    <div class="form-contact-container">
+    <div
+      class="container-form-contact-us-fixed"
+      id="container-form-contact-us-fixed"
+    >
       <form
         class="needs-validation-form form-contact"
+        id="form-contact-us-fixed"
         novalidate
-        method="post"
-        action="./send-form/form-send-fixed.php"
         onsubmit="() => validateForm()"
       >
         <div class="content-item-image">
@@ -708,7 +711,7 @@
                   type="radio"
                   id="contact-type-1"
                   name="contact-type-fixed"
-                  value="Llamada"
+                  value="call"
                 />
                 <label for="contact-type-1">LLAMADA</label>
               </div>
@@ -723,7 +726,7 @@
                   type="radio"
                   id="contact-type-2"
                   name="contact-type-fixed"
-                  value="Email"
+                  value="email"
                   checked
                 />
                 <label for="contact-type-2">EMAIL</label>
@@ -739,7 +742,7 @@
                   type="radio"
                   id="contact-type-3"
                   name="contact-type-fixed"
-                  value="Whatsapp"
+                  value="wsp"
                 />
                 <label for="contact-type-3">WHATSAPP</label>
               </div>
@@ -769,15 +772,6 @@
       <h1>Contáctanos</h1>
     </div>
 
-    <div
-      class="alert alert-success"
-      id="alert-success-status-form-contact"
-      role="alert"
-      style="display: none"
-    >
-      <!--Message status-->
-    </div>
-    <!--END ADD CODE External-->
     <!--**************** end FIXED FORM CONTACT *********************-->
 
     <!--**************** start GALLERY LIGHBOX *********************-->

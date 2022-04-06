@@ -18,9 +18,6 @@ body {
         font-size: 10px;
         @include mediaQuery(mobileS) {
           font-size: 7px;
-          @include mediaQuery(mobilexs) {
-            font-size: 6px;
-          }
         }
       }
     }
@@ -640,6 +637,7 @@ img {
         @include mediaQuery(desktopCustom) {
           font-size: 8em;
           @include mediaQuery(tablet) {
+            font-family: $font-secundary-bold;
             transform: none;
             font-size: 5em;
             position: relative;
@@ -660,21 +658,23 @@ img {
         flex-direction: column;
         justify-content: center;
         text-align: left;
-        font-size: 2em;
+        font-size: 1.68em;
         font-family: $font-primary;
         padding: 0 7em 0 1em;
         font-weight: 200;
-        @include mediaQuery(desktopCustom) {
-          font-size: 1.62em;
-          @include mediaQuery(tablet) {
-            font-size: 1.8em;
-            margin-bottom: 2em;
-            padding: 0 3em 2em 3em;
-          }
+
+        @include mediaQuery(tablet) {
+          font-size: 2.7em;
+          margin-bottom: 2em;
+          padding: 0 2em 2em 2em;
         }
 
         p {
+          margin: 1rem 0;
           text-align: justify;
+          @include mediaQuery(tablet) {
+            margin: 0.4rem 0;
+          }
         }
       }
     }

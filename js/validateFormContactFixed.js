@@ -1,12 +1,15 @@
 //MAP ELEMENTS HTML
-let generalContainer = document.querySelector(".general-container-form-contact");
-let formContainerContact = document.querySelector(".form-contact-container");
+let formContainerContact = document.querySelector(
+  "#container-form-contact-us-fixed"
+);
 let itemVisibleForm = document.querySelector(".item-open-form");
 let itemIconCloseForm = document.querySelector(".item-icon-close-form");
 let openFormMobile = document.querySelector(".item-open-form-mobile");
 let formContact = document.querySelector(".needs-validation-form");
 let iconFormContact = document.querySelector("#icon-form-contact");
-let alertSuccessMessage = document.querySelector("#alert-success-status-form-contact");
+let alertSuccessMessage = document.querySelector(
+  "#alert-success-status-form-contact"
+);
 
 let activeFormOpen;
 
@@ -14,131 +17,160 @@ let resultContactType_ = "";
 
 //ADD EVENTS ITEMS
 itemIconCloseForm.addEventListener("click", function () {
-	activeFormOpen = false;
-	setLocalStorage("activeFormContent", {isVisibleFormContact: false});
-	isVisibleItem(formContainerContact, "none");
-	isVisibleItem(itemVisibleForm, "flex");
-	iconFormContact.className = "fa fa-sort-up";
+  activeFormOpen = false;
+  setLocalStorage("activeFormContent", { isVisibleFormContact: false });
+  isVisibleItem(formContainerContact, "none");
+  isVisibleItem(itemVisibleForm, "flex");
+  iconFormContact.className = "fa fa-sort-up";
 });
 
 //BTN CONTACT OPEN AND CLOSE
 itemVisibleForm.addEventListener("click", function () {
-	if (!activeFormOpen) {
-		activeFormOpen = true;
-		setLocalStorage("activeFormContent", {isVisibleFormContact: true});
-		isVisibleItem(formContainerContact, "flex");
-		isVisibleItem(itemVisibleForm, "none");
-	} else {
-		activeFormOpen = false;
-		setLocalStorage("activeFormContent", {isVisibleFormContact: false});
-		isVisibleItem(formContainerContact, "none");
-		isVisibleItem(itemVisibleForm, "flex");
-		iconFormContact.className = "fa fa-sort-up";
-	}
+  if (!activeFormOpen) {
+    activeFormOpen = true;
+    setLocalStorage("activeFormContent", { isVisibleFormContact: true });
+    isVisibleItem(formContainerContact, "flex");
+    isVisibleItem(itemVisibleForm, "none");
+  } else {
+    activeFormOpen = false;
+    setLocalStorage("activeFormContent", { isVisibleFormContact: false });
+    isVisibleItem(formContainerContact, "none");
+    isVisibleItem(itemVisibleForm, "flex");
+    iconFormContact.className = "fa fa-sort-up";
+  }
 });
 
 //LOAD CONFIG
 function onLoadFunction() {
-	let activeFormContent_ = getLocalStorage("activeFormContent");
+  let activeFormContent_ = getLocalStorage("activeFormContent");
 
-	activeFormContent_ == null &&
-		setLocalStorage("activeFormContent", {isVisibleFormContact: true});
+  activeFormContent_ == null &&
+    setLocalStorage("activeFormContent", { isVisibleFormContact: true });
 
-	if (!getLocalStorage("activeFormContent").isVisibleFormContact) {
-		activeFormOpen = false;
-		if (!activeFormOpen) {
-			isVisibleItem(formContainerContact, "none");
-			isVisibleItem(itemVisibleForm, "flex");
-		}
-	} else {
-		activeFormOpen = true;
-		if (activeFormOpen) {
-			isVisibleItem(formContainerContact, "flex");
-			isVisibleItem(itemVisibleForm, "none");
-		}
-	}
+  if (!getLocalStorage("activeFormContent").isVisibleFormContact) {
+    activeFormOpen = false;
+    if (!activeFormOpen) {
+      isVisibleItem(formContainerContact, "none");
+      isVisibleItem(itemVisibleForm, "flex");
+    }
+  } else {
+    activeFormOpen = true;
+    if (activeFormOpen) {
+      isVisibleItem(formContainerContact, "flex");
+      isVisibleItem(itemVisibleForm, "none");
+    }
+  }
 }
 
 document.body.addEventListener("load", onLoadFunction());
 
+formContainerContact.addEventListener("submit", async (e) => validateForm(e));
+
 //VALIDATE CONTENT FORM
-function validateForm() {
-	let nameValue = document.querySelector("#input-name-fixed").value;
-	let lastNameValue = document.querySelector("#input-lastName-fixed").value;
-	let companyValue = document.querySelector("#input-company-fixed").value;
-	let emailValue = document.querySelector("#input-email-fixed").value;
-	let phoneValue = document.querySelector("#input-phone-fixed").value;
-	let servicesValue = document.querySelector("#select-services-fixed").value;
-	let contactType = document.getElementsByName("contact-type-fixed");
+const validateForm = async (e) => {
+  e.preventDefault();
 
-	let stateMessage = document.querySelector("#state-message");
+  let nameValue = document.querySelector("#input-name-fixed").value;
+  let lastNameValue = document.querySelector("#input-lastName-fixed").value;
+  let companyValue = document.querySelector("#input-company-fixed").value;
+  let emailValue = document.querySelector("#input-email-fixed").value;
+  let phoneValue = document.querySelector("#input-phone-fixed").value;
+  let servicesValue = document.querySelector("#select-services-fixed").value;
+  let contactType = document.getElementsByName("contact-type-fixed");
 
-	if (!nameValue || !lastNameValue || !emailValue || !phoneValue || !servicesValue) {
-		isVisibleItem(stateMessage, "inherit");
-		stateMessage.innerHTML = "*Ups te falto llenar el formulario";
-		stateMessage.style.color = "red";
-		setLocalStorage("activeAlert", {isVisibleAlert: false});
+  let stateMessage = document.querySelector("#state-message");
 
-		return false;
-	} else {
-		//GET DATA RADIO GROUP
-		getDataTypeContact(contactType);
+  if (
+    !nameValue ||
+    !lastNameValue ||
+    !emailValue ||
+    !phoneValue ||
+    !servicesValue
+  ) {
+    isVisibleItem(stateMessage, "inherit");
+    stateMessage.innerHTML = "*Ups te falto llenar el formulario";
+    stateMessage.style.color = "red";
+    setLocalStorage("activeAlert", { isVisibleAlert: false });
 
-		let userDataSt = {
-			userName: nameValue.toLowerCase(),
-			userLastName: lastNameValue.toLowerCase(),
-			userCompany: companyValue.toLowerCase(),
-			userEmail: emailValue.toLowerCase(),
-			userPhone: phoneValue.toLowerCase(),
-			userService: servicesValue.toLowerCase(),
-			userContactType: (resultContactType_ ? resultContactType_ : "undefined").toLowerCase(),
-		};
+    return false;
+  } else {
+    //GET DATA RADIO GROUP
+    getDataTypeContact(contactType);
 
-		activeFormOpen = false;
-		setLocalStorage("activeFormContent", {isVisibleFormContact: false});
-		isVisibleItem(formContainerContact, "none");
-		//SET DATA
-		setLocalStorage("userData", userDataSt);
-		setLocalStorage("activeAlert", {isVisibleAlert: true});
-		isVisibleItem(stateMessage, "none");
+    let userDataSt = {
+      userName: nameValue.toLowerCase(),
+      userLastName: lastNameValue.toLowerCase(),
+      userCompany: companyValue.toLowerCase(),
+      userEmail: emailValue.toLowerCase(),
+      userPhone: phoneValue.toLowerCase(),
+      userService: servicesValue.toLowerCase(),
+      userContactType: (resultContactType_
+        ? resultContactType_
+        : "cualquiera"
+      ).toLowerCase(),
+    };
 
-		const refMessage = `https://api.whatsapp.com/send?phone=+51987523496&text=*_MENSAJE DE COTIZACIÓN DESDE WEB MARKOCREATIVO_*%0A%0A*Nombres:*%0A${nameValue}%0A%0A*Apellidos:*%0A${lastNameValue}%0A%0A*Empresa:*%0A${companyValue}%0A%0A*Email:*%0A${emailValue}%0A%0A*Cell:*%0A${phoneValue}%0A%0A*Servicio:*%0A${servicesValue}%0A%0A*Tipo de contácto:*%0A${
-			resultContactType_ ? resultContactType_ : "undefined"
-		}`;
+    activeFormOpen = false;
+    setLocalStorage("activeFormContent", { isVisibleFormContact: false });
+    isVisibleItem(formContainerContact, "none");
+    //SET DATA
+    setLocalStorage("userData", userDataSt);
+    setLocalStorage("activeAlert", { isVisibleAlert: true });
+    isVisibleItem(stateMessage, "none");
 
-		window.open(refMessage);
+    const mapContact = {
+      firstName: contact.userName,
+      lastName: contact.userLastName,
+      company: contact.userCompany,
+      email: contact.userEmail,
+      phone: contact.userPhone,
+      service: contact.userService,
+      contactPreference: contact.userContactType,
+    };
 
-		nameValue = "";
-		lastNameValue = "";
-		companyValue = "";
-		emailValue = "";
-		phoneValue = "";
-		servicesValue = "";
-		contactType = "";
-		resultContactType_ = "";
+    const result = await fetchSendEmail(mapContact);
 
-		return true;
-	}
-}
+    if (!result.ok) return false;
+
+    const refMessage = `https://api.whatsapp.com/send?phone=+51987523496&text=*_MENSAJE DE COTIZACIÓN DESDE WEB MARKOCREATIVO_*%0A%0A*Nombres:*%0A${nameValue}%0A%0A*Apellidos:*%0A${lastNameValue}%0A%0A*Empresa:*%0A${companyValue}%0A%0A*Email:*%0A${emailValue}%0A%0A*Cell:*%0A${phoneValue}%0A%0A*Servicio:*%0A${servicesValue}%0A%0A*Tipo de contácto:*%0A${
+      resultContactType_ ? resultContactType_ : "undefined"
+    }`;
+
+    window.location.href = "../successful-message.html";
+
+    window.open(refMessage);
+
+    nameValue = "";
+    lastNameValue = "";
+    companyValue = "";
+    emailValue = "";
+    phoneValue = "";
+    servicesValue = "";
+    contactType = "";
+    resultContactType_ = "";
+
+    return true;
+  }
+};
 
 //ACTIVE ALERT MESSAGE
 let activeAlert_ = getLocalStorage("activeAlert");
 let userData_ = getLocalStorage("userData");
 
 if (activeAlert_ && userData_) {
-	if (activeAlert_.isVisibleAlert) {
-		alertSuccessMessage.style.display = "inherit";
-		alertSuccessMessage.innerHTML = `${userData_.userName.toUpperCase()} tu mensaje se ah enviado exitosamente, enseguida nos contáctaremos`;
-	} else {
-		alertSuccessMessage.style.display = "none";
-	}
+  if (activeAlert_.isVisibleAlert) {
+    alertSuccessMessage.style.display = "inherit";
+    alertSuccessMessage.innerHTML = `${userData_.userName.toUpperCase()} tu mensaje se ah enviado exitosamente, enseguida nos contáctaremos`;
+  } else {
+    alertSuccessMessage.style.display = "none";
+  }
 
-	setTimeout(function () {
-		alertSuccessMessage.style.display = "none";
-		setLocalStorage("activeAlert", {isVisibleAlert: false});
-		//DELETE USER DATA
-		userData_ && localStorage.removeItem("userData");
-	}, 4000);
+  setTimeout(function () {
+    alertSuccessMessage.style.display = "none";
+    setLocalStorage("activeAlert", { isVisibleAlert: false });
+    //DELETE USER DATA
+    userData_ && localStorage.removeItem("userData");
+  }, 4000);
 }
 
 //LISTENER STATE LOCAL STORAGE******************************************>>>
@@ -151,24 +183,24 @@ if (activeAlert_ && userData_) {
 
 //FUNCTIONS LOCAL STORAGE
 function setLocalStorage(key, value) {
-	localStorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(key, JSON.stringify(value));
 }
 
 function getLocalStorage(key) {
-	return JSON.parse(localStorage.getItem(key));
+  return JSON.parse(localStorage.getItem(key));
 }
 
 //ACTION ISVISIBLE ELEMENT
 function isVisibleItem(item, value) {
-	item.style.display = value;
+  item.style.display = value;
 }
 
 //GET DATA RADIO BUTTONS
 function getDataTypeContact(contactType) {
-	contactType.forEach((contact) => {
-		if (contact.checked) {
-			resultContactType_ = contact.value;
-			return resultContactType_;
-		}
-	});
+  contactType.forEach((contact) => {
+    if (contact.checked) {
+      resultContactType_ = contact.value;
+      return resultContactType_;
+    }
+  });
 }
