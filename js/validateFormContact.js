@@ -24,7 +24,7 @@ textAreaDescription.addEventListener("input", () => {
   getDataItems(textAreaDescription, textAreaDescription.value, "message");
 });
 
-formContactFooter.addEventListener("submit", (e) => validateEmailFormat(e));
+formContactFooter.addEventListener("submit", (e) => validateFormContact(e));
 
 const validateFormContact = async (e) => {
   e.preventDefault();
@@ -74,14 +74,6 @@ function getDataItems(item, value, key) {
     setSessionStorage(key, value);
     validateEmailFormat(key, value);
   }
-}
-
-function setSessionStorage(key, value) {
-  sessionStorage.setItem(key, value);
-}
-
-function addClassNew(item, value) {
-  return (item.className = value);
 }
 
 function setClassNameAll(value) {

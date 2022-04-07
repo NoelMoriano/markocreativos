@@ -485,12 +485,7 @@
               />
             </div>
             <div class="content-form-contact">
-              <form
-                id="form-contact-us-footer"
-                class="form-contact"
-                novalidate
-                onsubmit="() => validateFormContact()"
-              >
+              <form id="form-contact-us-footer" class="form-contact" novalidate>
                 <div class="item-group-form">
                   <label for="">Nombres y Apellidos:</label>
                   <input
@@ -602,7 +597,6 @@
         class="needs-validation-form form-contact"
         id="form-contact-us-fixed"
         novalidate
-        onsubmit="() => validateForm()"
       >
         <div class="content-item-image">
           <img
@@ -621,66 +615,44 @@
         <span class="element-bg-color">
           <div class="form-item-row" style="width: 100%">
             <div class="item-form-input column-secondary">
-              <!-- <label for="validationCustom01">Nombres:</label> -->
-              <input
-                type="text"
-                id="input-name-fixed"
-                name="userName"
-                placeholder="NOMBRES"
-                required
-              />
+              <input type="text" id="input-name-fixed" placeholder="NOMBRES" />
             </div>
             <div class="item-form-input column-secondary">
-              <!-- <label for="validationCustom02">Apellidos:</label> -->
               <input
                 type="text"
                 id="input-lastName-fixed"
-                name="userLastName"
                 placeholder="APELLIDOS"
-                required
               />
             </div>
           </div>
           <div class="form-item-row">
             <div class="item-form-input column-12">
-              <!-- <label for="validationCustom02 exampleFormControlTextarea1">Empresa:</label> -->
               <input
                 type="text"
                 min="0"
                 id="input-company-fixed"
-                name="userCompany"
                 placeholder="EMPRESA"
-                required
               />
             </div>
             <div class="item-form-input column-12">
-              <!-- <label for="validationCustom04 exampleFormControlTextarea1">Email:</label> -->
               <input
                 type="email"
                 min="0"
                 id="input-email-fixed"
-                name="userEmail"
                 placeholder="EMAIL"
-                required
               />
             </div>
             <div class="item-form-input column-12">
-              <!-- <label for="validationCustom03 exampleFormControlTextarea1">Teléfono:</label> -->
               <input
                 type="number"
                 min="0"
                 id="input-phone-fixed"
-                name="userPhone"
                 placeholder="CELULAR"
-                required
               />
             </div>
             <div class="item-form-select column-12">
-              <!-- <label for="validationCustom05 exampleFormControlTextarea1">Servicio:</label> -->
               <select
-                name="select-service"
                 id="select-services-fixed"
-                required
                 aria-placeholder="Seleccione servicio"
               >
                 <option value="otros">[SERVICIO A COTIZAR]</option>
@@ -707,12 +679,7 @@
                 tabindex="0"
                 class="item-radio"
               >
-                <input
-                  type="radio"
-                  id="contact-type-1"
-                  name="contact-type-fixed"
-                  value="call"
-                />
+                <input type="radio" id="contact-type-1" value="call" />
                 <label for="contact-type-1">LLAMADA</label>
               </div>
               <hr />
@@ -722,13 +689,7 @@
                 tabindex="1"
                 class="item-radio"
               >
-                <input
-                  type="radio"
-                  id="contact-type-2"
-                  name="contact-type-fixed"
-                  value="email"
-                  checked
-                />
+                <input type="radio" id="contact-type-2" value="email" checked />
                 <label for="contact-type-2">EMAIL</label>
               </div>
               <hr />
@@ -738,12 +699,7 @@
                 tabindex="2"
                 class="item-radio"
               >
-                <input
-                  type="radio"
-                  id="contact-type-3"
-                  name="contact-type-fixed"
-                  value="wsp"
-                />
+                <input type="radio" id="contact-type-3" value="wsp" />
                 <label for="contact-type-3">WHATSAPP</label>
               </div>
             </div>
@@ -753,8 +709,8 @@
             <div class="item-form-button column-12">
               <button
                 class="btn-customer-form-contact"
-                name="btn-send-message-fixed"
                 type="submit"
+                id="btn-send-message-fixed"
               >
                 Enviar
               </button>
@@ -799,6 +755,7 @@
     <!--**************** end GALLERY LIGHBOX *********************-->
 
     <!-- /GetButton.io widget -->
+    <script src="./js/utils.js"></script>
     <script src="./js/carousel-landing.js"></script>
     <script src="./js/simpleParallax.min.js"></script>
     <script src="./js/animationHomePage.js"></script>

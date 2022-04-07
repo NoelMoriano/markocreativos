@@ -7,9 +7,6 @@ let itemIconCloseForm = document.querySelector(".item-icon-close-form");
 let openFormMobile = document.querySelector(".item-open-form-mobile");
 let formContact = document.querySelector(".needs-validation-form");
 let iconFormContact = document.querySelector("#icon-form-contact");
-let alertSuccessMessage = document.querySelector(
-  "#alert-success-status-form-contact"
-);
 
 let activeFormOpen;
 
@@ -64,7 +61,7 @@ function onLoadFunction() {
 
 document.body.addEventListener("load", onLoadFunction());
 
-formContainerContact.addEventListener("submit", async (e) => validateForm(e));
+formContainerContact.addEventListener("submit", (e) => validateForm(e));
 
 //VALIDATE CONTENT FORM
 const validateForm = async (e) => {
@@ -119,18 +116,22 @@ const validateForm = async (e) => {
     isVisibleItem(stateMessage, "none");
 
     const mapContact = {
-      firstName: contact.userName,
-      lastName: contact.userLastName,
-      company: contact.userCompany,
-      email: contact.userEmail,
-      phone: contact.userPhone,
-      service: contact.userService,
-      contactPreference: contact.userContactType,
+      firstName: userDataSt.userName,
+      lastName: userDataSt.userLastName,
+      company: userDataSt.userCompany,
+      email: userDataSt.userEmail,
+      phone: userDataSt.userPhone,
+      service: userDataSt.userService,
+      contactPreference: userDataSt.userContactType,
     };
 
     const result = await fetchSendEmail(mapContact);
 
-    if (!result.ok) return false;
+    if (!result.ok) {
+      isVisibleItem(formContainerContact, "none");
+      isVisibleItem(itemVisibleForm, "flex");
+      return false;
+    }
 
     const refMessage = `https://api.whatsapp.com/send?phone=+51987523496&text=*_MENSAJE DE COTIZACIÓN DESDE WEB MARKOCREATIVO_*%0A%0A*Nombres:*%0A${nameValue}%0A%0A*Apellidos:*%0A${lastNameValue}%0A%0A*Empresa:*%0A${companyValue}%0A%0A*Email:*%0A${emailValue}%0A%0A*Cell:*%0A${phoneValue}%0A%0A*Servicio:*%0A${servicesValue}%0A%0A*Tipo de contácto:*%0A${
       resultContactType_ ? resultContactType_ : "undefined"
@@ -153,47 +154,13 @@ const validateForm = async (e) => {
   }
 };
 
-//ACTIVE ALERT MESSAGE
-let activeAlert_ = getLocalStorage("activeAlert");
-let userData_ = getLocalStorage("userData");
-
-if (activeAlert_ && userData_) {
-  if (activeAlert_.isVisibleAlert) {
-    alertSuccessMessage.style.display = "inherit";
-    alertSuccessMessage.innerHTML = `${userData_.userName.toUpperCase()} tu mensaje se ah enviado exitosamente, enseguida nos contáctaremos`;
-  } else {
-    alertSuccessMessage.style.display = "none";
-  }
-
-  setTimeout(function () {
-    alertSuccessMessage.style.display = "none";
-    setLocalStorage("activeAlert", { isVisibleAlert: false });
-    //DELETE USER DATA
-    userData_ && localStorage.removeItem("userData");
-  }, 4000);
-}
-
 //LISTENER STATE LOCAL STORAGE******************************************>>>
-/* if(getLocalStorage("activeFormContent").isVisibleFormContact){
-        isVisibleItem(formContainerContact,"flex");
-    }else{
-        isVisibleItem(formContainerContact,"none"); 
-    } */
+if (getLocalStorage("activeFormContent").isVisibleFormContact) {
+  isVisibleItem(formContainerContact, "flex");
+} else {
+  isVisibleItem(formContainerContact, "none");
+}
 //<<<********************************************************************End
-
-//FUNCTIONS LOCAL STORAGE
-function setLocalStorage(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
-
-function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
-}
-
-//ACTION ISVISIBLE ELEMENT
-function isVisibleItem(item, value) {
-  item.style.display = value;
-}
 
 //GET DATA RADIO BUTTONS
 function getDataTypeContact(contactType) {
