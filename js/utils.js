@@ -58,9 +58,43 @@ const clearAllLocalStorage = () => localStorage.clear(); //clear all local stora
 
 // SESSION AND LOCAL STORAGE //
 
-const addClassName = (className, element) => element.classList.add(className); //add className
+const addClassNames = (classNames = [], element) =>
+  classNames.forEach((className) => element.classList.add(className)); //add classNames
 
-const removeClassName = (className, element) =>
-  element.classList.remove(className); //remove className
+const removeClassNames = (classNames = [], element) =>
+  classNames.forEach((className) => element.classList.remove(className)); //remove classNames
 
 const isVisibleItem = (item, value) => (item.style.display = value); //is visible item
+
+const validateEmailFormat = (valueEmail) => {
+  const regexEmail =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  return regexEmail.test(String(valueEmail).toLowerCase());
+}; //validate format email
+
+const validateFormFields = (formFields) => {
+  let isValid = [];
+
+  const emailField = formFields.find((element) => element.type === "email");
+
+  const isValidEmail = validateEmailFormat(emailField.value);
+
+  !isValidEmail
+    ? addClassNames(["not-invalid", "shake"], emailField)
+    : removeClassNames(["not-invalid", "shake"], emailField);
+
+  isValid.push(isValidEmail);
+
+  formFields
+    .filter((field) => field.type !== "email")
+    .forEach((item) => {
+      !item.value
+        ? addClassNames(["not-invalid", "shake"], item)
+        : removeClassNames(["not-invalid", "shake"], item);
+
+      isValid.push(!!item.value);
+    });
+
+  return isValid.includes(false) ? false : true;
+}; //validate form fields

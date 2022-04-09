@@ -1,4 +1,4 @@
-let formContactFooter = document.querySelector("#form-contact-us-footer");
+/* let formContactFooter = document.querySelector("#form-contact-us-footer");
 let btnSendMessage = document.querySelector("#btn-send-message");
 let warningMessage = document.querySelector("#warning-message");
 
@@ -120,3 +120,4 @@ function validateEmailFormat(key, valueEmail) {
 }
 
 defaultValueItems();
+ */

@@ -474,6 +474,7 @@
             alt="Contactanos MarkoCreativos"
           />
         </div>
+
         <div class="content-form" id="content-form-contact-us">
           <div class="item-form">
             <div class="title-form">
@@ -484,15 +485,28 @@
                 alt="Contactos MarkoCreativos"
               />
             </div>
+
             <div class="content-form-contact">
               <form id="form-contact-us-footer" class="form-contact" novalidate>
-                <div class="item-group-form">
-                  <label for="">Nombres y Apellidos:</label>
-                  <input
-                    type="text"
-                    id="input-name-and-lastname"
-                    placeholder="Ingrese nombres y apellidos"
-                  />
+                <div class="group-by-flex">
+                  <div class="item-group-form">
+                    <label for="">Nombres:</label>
+                    <input
+                      type="text"
+                      id="firstname-fo"
+                      class="contact-form__input"
+                      placeholder="Ingrese nombres"
+                    />
+                  </div>
+                  <div class="item-group-form">
+                    <label for="">Apellidos:</label>
+                    <input
+                      type="text"
+                      id="lastname-fo"
+                      class="contact-form__input"
+                      placeholder="Ingrese apellidos"
+                    />
+                  </div>
                 </div>
 
                 <div class="group-by-flex">
@@ -500,31 +514,26 @@
                     <label for="">Telefono ó celular:</label>
                     <input
                       type="number"
-                      id="input-phone"
+                      id="phone-fo"
+                      class="contact-form__input"
                       placeholder="Ingrese telefono ó celular"
                     />
                   </div>
                   <div class="item-group-form">
                     <label for="">E-mail:</label>
                     <input
-                      type="text"
-                      id="input-email"
+                      type="email"
+                      id="email-fo"
+                      class="contact-form__input"
                       placeholder="Ingrese e-mail"
                     />
-                    <div style="color: red !important; font-size: 0.8rem">
-                      <label
-                        for="warning"
-                        id="warning-message"
-                        style="display: none"
-                        >Email Invalido</label
-                      >
-                    </div>
                   </div>
                 </div>
                 <div class="item-group-form">
                   <label for="">Mensaje:</label>
                   <textarea
-                    id="text-area-description"
+                    id="message-fo"
+                    class="contact-form__input"
                     cols="30"
                     rows="6"
                     max-col="30"
@@ -761,6 +770,7 @@
     <script src="./js/animationHomePage.js"></script>
     <script src="./js/activeMenuMobile.js"></script>
     <script src="./js/validateFormContact.js"></script>
+    <script src="./js/contactFooter.js"></script>
     <script src="./js/validateFormContactFixed.js"></script>
     <script src="./js/viewAlbum.js"></script>
   </body>

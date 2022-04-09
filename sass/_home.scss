@@ -1579,8 +1579,10 @@ img {
                 width: 100%;
                 padding: 0.6rem 7px;
                 font-size: 1.2rem;
+                box-sizing: border-box;
                 outline: none;
                 font-family: inherit;
+                border: 1px solid transparent;
                 @include mediaQuery(desktopCustom) {
                   padding: 0.3rem 7px;
                   font-size: 1rem;
@@ -1615,7 +1617,7 @@ img {
                 color: setColor(black);
                 text-transform: uppercase;
                 font-weight: 500;
-                border: none;
+                border: transparent;
                 cursor: pointer;
                 transition: all ease-in-out 0.5s;
                 @include mediaQuery(desktopCustom) {
