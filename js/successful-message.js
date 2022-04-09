@@ -6,4 +6,4 @@ const onGoBackClick = () => {
 
 elementBtnGoBack.addEventListener("click", () => onGoBackClick());
 
-/* setTimeout(() => onGoBackClick(), 5000); */
+setTimeout(() => onGoBackClick(), 5000);

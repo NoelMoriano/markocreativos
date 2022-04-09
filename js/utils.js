@@ -73,12 +73,12 @@ const validateEmailFormat = (valueEmail) => {
   return regexEmail.test(String(valueEmail).toLowerCase());
 }; //validate format email
 
-const validateFormFields = (formFields) => {
+const validateFormFields = (formFields, fieldsNoRequired) => {
   let isValid = [];
 
   const emailField = formFields.find((element) => element.type === "email");
 
-  const isValidEmail = validateEmailFormat(emailField.value);
+  const isValidEmail = validateEmailFormat(emailField.value.trim());
 
   !isValidEmail
     ? addClassNames(["not-invalid", "shake"], emailField)
@@ -87,9 +87,11 @@ const validateFormFields = (formFields) => {
   isValid.push(isValidEmail);
 
   formFields
-    .filter((field) => field.type !== "email")
+    .filter(
+      (field) => field.type !== "email" && !fieldsNoRequired.includes(field.id)
+    )
     .forEach((item) => {
-      !item.value
+      !item.value.trim()
         ? addClassNames(["not-invalid", "shake"], item)
         : removeClassNames(["not-invalid", "shake"], item);
 

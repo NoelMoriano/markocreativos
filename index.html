@@ -29,19 +29,19 @@
     <!--STYLES CSS-->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="./css/animate.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 
     <!--Import customers logos-->
-    <script src="./js/global.js"></script>
     <script src="./js/customers.js"></script>
     <script src="./js/briefcase-images.js"></script>
     <script src="./js/wow.js"></script>
     <script>
       new WOW().init();
     </script>
+    <script
+      rel="preconnect"
+      src="https://kit.fontawesome.com/ca1b901786.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body style="position: relative">
     <section class="container-menu-mobile">
@@ -93,6 +93,8 @@
             loading="lazy"
             src="images/header/logo.png"
             alt="Marko creativo logo"
+            width="100%"
+            height="100%"
           />
         </div>
       </div>
@@ -111,10 +113,10 @@
       <div class="container-slider">
         <div id="slideshow">
           <div class="control">
-            <button class="btn-previous" id="previous">
+            <button class="btn-previous" id="previous" aria-label="arrow left">
               <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </button>
-            <button class="btn-next" id="next">
+            <button class="btn-next" id="next" aria-label="arrow right">
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </button>
           </div>
@@ -128,6 +130,8 @@
                     src="./images/sliders/img-slider1.png"
                     alt="Slider MarkoCreativos"
                     class="img-slider1"
+                    width="100%"
+                    height="100%"
                   />
                 </div>
                 <div class="item-text-slider">
@@ -157,6 +161,8 @@
                     src="./images/sliders/img-slider2.png"
                     alt="Slider MarkoCreativos"
                     class="img-slider2"
+                    width="100%"
+                    height="100%"
                   />
                 </div>
               </div>
@@ -170,6 +176,8 @@
                     src="./images/sliders/img-slider3.png"
                     alt="Slider MarkoCreativos"
                     class="img-slider3"
+                    width="100%"
+                    height="100%"
                   />
                 </div>
                 <div class="item-text-slider">
@@ -240,6 +248,8 @@
             data-wow-delay="1s"
             src="./images/sections/about-us/img-man-gray.png"
             alt="About Us, Nosotros MarkoCreativos"
+            width="100%"
+            height="100%"
           />
         </div>
       </div>
@@ -256,6 +266,8 @@
             data-wow-delay="1s"
             src="./images/sections/services/toy-black.png"
             alt="Servicios Us, Servicios MarkoCreativos"
+            width="100%"
+            height="100%"
           />
           <div class="item-title">
             <div>SER</div>
@@ -271,6 +283,8 @@
                   loading="lazy"
                   src="./images/icons/branding.png"
                   alt="Branding MarkoCreativos"
+                  width="100%"
+                  height="100%"
                 />
               </div>
               <div class="title-service">
@@ -293,6 +307,8 @@
                   loading="lazy"
                   src="./images/icons/publicidadd.png"
                   alt="Publicidad MarkoCreativos"
+                  width="100%"
+                  height="100%"
                 />
               </div>
               <div class="title-service">
@@ -315,6 +331,8 @@
                   loading="lazy"
                   src="./images/icons/web.png"
                   alt="Diseño Web MarkoCreativos"
+                  width="100%"
+                  height="100%"
                 />
               </div>
               <div class="title-service">
@@ -337,6 +355,8 @@
                   loading="lazy"
                   src="./images/icons/fotografia.png"
                   alt="Fotografia MarkoCreativos"
+                  width="100%"
+                  height="100%"
                 />
               </div>
               <div class="title-service">
@@ -374,6 +394,8 @@
           class="img-text-title-job-us-ittju1"
           src="./images/sections/title-jobs/title-img-jobs-us.png"
           alt="Trabajos MarkoCreativos"
+          width="100%"
+          height="100%"
         />
       </div>
       <img
@@ -381,6 +403,8 @@
         class="img-girl img-girl-title-jobs-us-an003"
         src="./images/sections/title-jobs/img-girl-for-title-job.png"
         alt="Nuestro Trabajos MarkoCreativos"
+        width="100%"
+        height="100%"
       />
     </section>
 
@@ -402,7 +426,7 @@
                   [5, 13, 21].includes(index + 1) && `setImg-${index + 1}`
                 }" class="wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" alt="${
                   item.namePrimary
-                } MarkoCreativos">
+                } MarkoCreativos" width="100%" height="100%">
 						<figcaption ${[5, 13, 21].includes(index + 1) && "hidden='true'"}>
 							<div class="grid-button-wrapper">
 								<p>${item.category.toUpperCase()}</p>
@@ -432,7 +456,7 @@
                 for (let data of customers) {
                   data
                     ? (containerLogos.innerHTML += `<div class="item-logo">
-											<img loading="lazy" class="wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="1s" src="images/customers-logos/${data.name}.png" alt="${data.name} MarkoCreativos">
+											<img loading="lazy" class="wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="1s" src="images/customers-logos/${data.name}.png" alt="${data.name} MarkoCreativos" width="100%" height="100%">
 										</div>`)
                     : "<p>No se encontro datos...</p>";
                 }
@@ -448,6 +472,8 @@
             data-wow-delay="1s"
             src="./images/sections/customers/img-customer.png"
             alt="Nuestro clientes MarkoCreativos"
+            width="100%"
+            height="100%"
           />
         </div>
       </div>
@@ -464,6 +490,8 @@
             data-wow-delay="1s"
             src="./images/sections/contact/lines-white-contact.png"
             alt="Contactanos MarkoCreativos"
+            width="100%"
+            height="100%"
           />
           <img
             loading="lazy"
@@ -472,6 +500,8 @@
             data-wow-delay="1s"
             src="./images/sections/contact/img-monkey-in-contact.png"
             alt="Contactanos MarkoCreativos"
+            width="100%"
+            height="100%"
           />
         </div>
 
@@ -483,6 +513,8 @@
                 class="img-contact-an004"
                 src="./images/sections/contact/title-form.png"
                 alt="Contactos MarkoCreativos"
+                width="100%"
+                height="100%"
               />
             </div>
 
@@ -556,19 +588,13 @@
           <div class="item-footer-redes">
             <div class="item-contact">
               <div class="icon">
-                <a href="tel:+51987523496" alt="MarkoCreativos telefóno"
-                  ><i class="fa fa-phone"></i
-                ></a>
+                <i class="fa fa-phone"></i>
               </div>
               <span><a href="tel:+51987523496">987 523 496</a></span>
             </div>
             <div class="item-contact">
               <div class="icon">
-                <a
-                  href="mailto:markocreativos@gmail.com"
-                  alt="MarkoCreativos email"
-                  ><i class="fa fa-envelope"></i
-                ></a>
+                <i class="fa fa-envelope"></i>
               </div>
               <span
                 ><a href="mailto:markocreativos@gmail.com"
@@ -613,12 +639,16 @@
             src="./images/otros/fixed-form-icon-close.png"
             class="item-icon-close-form"
             alt="MarkoCreativos"
+            width="100%"
+            height="100%"
           />
           <img
             loading="lazy"
             src="images/otros/form-girl.png"
             alt="image form"
             class="image-form-contact"
+            width="100%"
+            height="100%"
           />
         </div>
         <span class="element-bg-color">
@@ -671,7 +701,9 @@
                   );
                   dataSelectService.map(
                     (service, index) =>
-                      (elementSelect.innerHTML += `<option key="${index}" value="${service}">${service}</option>`)
+                      (elementSelect.innerHTML += `<option key="${
+                        index + 1
+                      }"  value="${service}">${service}</option>`)
                   );
                 </script>
               </select>
@@ -752,6 +784,8 @@
               id="img-gallery-briefcase"
               src="./images/otros/image-spinner-loader-yellow.gif"
               alt="Imagenes MarkoCreativos"
+              width="100%"
+              height="100%"
             />
           </div>
           <div class="items-action">
@@ -764,12 +798,12 @@
     <!--**************** end GALLERY LIGHBOX *********************-->
 
     <!-- /GetButton.io widget -->
+    <script src="./js/global.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/carousel-landing.js"></script>
     <script src="./js/simpleParallax.min.js"></script>
     <script src="./js/animationHomePage.js"></script>
     <script src="./js/activeMenuMobile.js"></script>
-    <script src="./js/validateFormContact.js"></script>
     <script src="./js/contactFooter.js"></script>
     <script src="./js/validateFormContactFixed.js"></script>
     <script src="./js/viewAlbum.js"></script>

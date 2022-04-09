@@ -1659,6 +1659,7 @@ img {
           align-items: center;
           .icon {
             a {
+              cursor: pointer;
               text-decoration: none;
               color: setColor(black);
               i {
@@ -1677,7 +1678,6 @@ img {
             color: setColor(black);
             padding: 5px;
             margin: 0.3rem 1.2rem;
-            cursor: pointer;
           }
           span {
             font-weight: 500;

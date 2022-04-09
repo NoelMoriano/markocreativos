@@ -11,11 +11,7 @@ const validateFormContact = async (e) => {
   try {
     e.preventDefault();
 
-    const formFields = [...elementsInputs].filter(
-      (element) => element.localName !== "textarea"
-    );
-
-    const result = validateFormFields(formFields);
+    const result = validateFormFields([...elementsInputs], ["message-fo"]);
 
     if (!result) return false;
 

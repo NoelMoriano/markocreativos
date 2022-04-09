@@ -5,22 +5,22 @@ let notVisibleMenuMobile = document.querySelector(".icon-menu-close-mb");
 
 let itemsDisableMenuMobile = document.querySelectorAll(".active-item-mobile");
 
-visibleMenuMobile.addEventListener("click", activeMenuMobile);
-notVisibleMenuMobile.addEventListener("click", desactiveMenuMobile);
+visibleMenuMobile.addEventListener("click", () => activeMenuMobile());
+notVisibleMenuMobile.addEventListener("click", () => desactiveMenuMobile());
 
-function activeMenuMobile() {
-	MenuMobile.style.display = "inherit";
-}
+const activeMenuMobile = () => {
+  MenuMobile.style.display = "inherit";
+};
 
-function addedEventItems() {
-	for (let i = 0; i <= itemsDisableMenuMobile.length; i++) {
-		itemsDisableMenuMobile[i] &&
-			itemsDisableMenuMobile[i].addEventListener("click", desactiveMenuMobile);
-	}
-}
+const addedEventItems = () => {
+  for (let i = 0; i <= itemsDisableMenuMobile.length; i++) {
+    itemsDisableMenuMobile[i] &&
+      itemsDisableMenuMobile[i].addEventListener("click", desactiveMenuMobile);
+  }
+};
 
-function desactiveMenuMobile() {
-	MenuMobile.style.display = "none";
-}
+const desactiveMenuMobile = () => {
+  MenuMobile.style.display = "none";
+};
 
 addedEventItems();
