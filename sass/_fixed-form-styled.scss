@@ -160,16 +160,14 @@ $fontSize: (
       }
       .image-form-contact {
         width: auto;
-        height: 233px;
+        height: 197px;
       }
       .item-icon-close-form {
-        font-size: 2rem;
-        font-weight: 600;
         color: setColor(white);
         position: absolute;
         top: 0;
         left: 5px;
-        width: 80px;
+        width: 70px;
         height: auto;
         cursor: pointer;
         @media (min-width: $tablet) {

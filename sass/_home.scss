@@ -120,9 +120,9 @@ img {
   height: 100vh;
   background: black;
   display: grid;
-  grid-template-rows: 10% 5% 85%;
+  grid-template-rows: 1fr 5% 85%;
   @include mediaQuery(tablet) {
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 1fr 90%;
   }
 
   .container-logo {
@@ -153,7 +153,6 @@ img {
       img {
         width: 12em;
         height: auto;
-        position: absolute;
         @include mediaQuery(tablet) {
           width: 16em;
         }
@@ -1586,9 +1585,6 @@ img {
                 @include mediaQuery(desktopCustom) {
                   padding: 0.3rem 7px;
                   font-size: 1rem;
-                  @include mediaQuery(tablet) {
-                    width: 95%;
-                  }
                 }
               }
             }
