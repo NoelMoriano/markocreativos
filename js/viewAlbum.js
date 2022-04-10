@@ -16,17 +16,18 @@ document
     clearInterval(temporizador);
     newImages = [];
     countImage = 0;
-    imgGalleryBriefcase.src = "../images/otros/image-spinner-loader-yellow.gif";
+    imgGalleryBriefcase.src =
+      "../images/otros/image-spinner-loader-yellow.webp";
     containerModalViewGallery.style.display = "none";
   });
 
 document
   .querySelector("#prev-gallery-briefcase")
-  .addEventListener("click", () => changeImage());
+  .addEventListener("click", () => changeImage("prev-gallery-briefcase"));
 
 document
   .querySelector("#next-gallery-briefcase")
-  .addEventListener("click", () => changeImage());
+  .addEventListener("click", () => changeImage("next-gallery-briefcase"));
 
 imgGalleryBriefcase.addEventListener("mouseover", () => stopTemporizador());
 
@@ -45,8 +46,8 @@ const viewAlbumImg = (categoryId) => {
   }, 3000);
 };
 
-const changeImage = () => {
-  buttonType = this.id;
+const changeImage = (id) => {
+  buttonType = id;
 
   if (buttonType != undefined) {
     clearInterval(temporizador);
@@ -73,10 +74,11 @@ const changeImage = () => {
   }
 };
 
-const startTemporizador = () =>
-  (temporizador = setInterval(() => {
+const startTemporizador = () => {
+  temporizador = setInterval(() => {
     changeImage();
-  }, 3000));
+  }, 3000);
+};
 
 const stopTemporizador = () => clearInterval(temporizador);
 
