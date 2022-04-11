@@ -24,6 +24,3 @@ new simpleParallax(imgTextTitleJobUs, {
   scale: 1.5,
   transition: "cubic-bezier(0,0,0,1)",
 });
-
-//Scroll btn top
-const scrollBtnTop = () => scroll(0, 0);
