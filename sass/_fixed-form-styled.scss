@@ -264,12 +264,8 @@ $fontSize: (
       border-bottom: 1px solid setColor(black);
       outline: none;
       font-size: map-get($fontSize, "medium") !important;
-      padding: 8px 0;
+      padding: 0.5rem 0.7rem;
       font-weight: $fontWeight;
-    }
-
-    select {
-      padding: 8px 0;
     }
   }
 

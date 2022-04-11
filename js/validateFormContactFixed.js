@@ -1,4 +1,4 @@
-//MAP ELEMENTS HTML
+/* //MAP ELEMENTS HTML
 let formContainerContact = document.querySelector(
   "#container-form-contact-us-fixed"
 );
@@ -171,3 +171,4 @@ function getDataTypeContact(contactType) {
     }
   });
 }
+ */

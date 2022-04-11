@@ -73,7 +73,7 @@ const validateEmailFormat = (valueEmail) => {
   return regexEmail.test(String(valueEmail).toLowerCase());
 }; //validate format email
 
-const validateFormFields = (formFields, fieldsNoRequired) => {
+const validateFormFields = (formFields, fieldsNoRequired = []) => {
   let isValid = [];
 
   const emailField = formFields.find((element) => element.type === "email");
@@ -100,3 +100,9 @@ const validateFormFields = (formFields, fieldsNoRequired) => {
 
   return isValid.includes(false) ? false : true;
 }; //validate form fields
+
+// RADIO BUTTON
+const radioButtonsValue = (radioButtons) =>
+  [...radioButtons].find((radioButton) =>
+    radioButton.checked ? radioButton.value : null
+  ).value;

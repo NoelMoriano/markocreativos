@@ -1,7 +1,7 @@
 const elementFormContactFooter = document.querySelector(
   "#form-contact-us-footer"
 );
-const elementsInputs = document.querySelectorAll(".contact-form__input");
+const elementsFormFooter = document.querySelectorAll(".contact-form__input");
 
 elementFormContactFooter.addEventListener("submit", (e) =>
   validateFormContact(e)
@@ -11,13 +11,15 @@ const validateFormContact = async (e) => {
   try {
     e.preventDefault();
 
-    const result = validateFormFields([...elementsInputs], ["message-fo"]);
+    const result = validateFormFields([...elementsFormFooter], ["message-fo"]);
 
     if (!result) return false;
 
-    const elementsValues = [...elementsInputs].map((element) => element.value);
+    const elementsFormFooterValues = [...elementsFormFooter].map(
+      (element) => element.value
+    );
 
-    const formData = mapContact(elementsValues);
+    const formData = mapContact(elementsFormFooterValues);
 
     const response = await fetchSendEmail(formData);
 
@@ -29,10 +31,10 @@ const validateFormContact = async (e) => {
   }
 };
 
-const mapContact = (elementsValues) => ({
-  firstName: elementsValues[0],
-  lastName: elementsValues[1],
-  phone: elementsValues[2],
-  email: elementsValues[3],
-  message: elementsValues[4] || null,
+const mapContact = (elementsFormFooterValues) => ({
+  firstName: elementsFormFooterValues[0],
+  lastName: elementsFormFooterValues[1],
+  phone: elementsFormFooterValues[2],
+  email: elementsFormFooterValues[3],
+  message: elementsFormFooterValues[4] || null,
 });
