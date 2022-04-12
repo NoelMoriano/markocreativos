@@ -202,95 +202,80 @@ img {
   .container-slider {
     width: 100%;
     height: auto;
-    #slideshow {
+    position: relative;
+    overflow: hidden;
+    .control {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 0;
+      z-index: 99;
+      display: block;
+    }
+    .control > button {
+      width: 4.7%;
+      height: 100%;
+      opacity: 1;
+      color: setColor(black);
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: 2rem;
+      outline: none;
+    }
+    #btn-previous {
+      float: left;
+      i {
+        cursor: pointer;
+        transition: all ease-in-out 0.2s;
+        &:hover {
+          transition: all ease-in-out 0.2s;
+          -webkit-text-stroke: 2px setColor(black);
+          color: setColor(yellow);
+        }
+        @include mediaQuery(mobile) {
+          display: none;
+        }
+      }
+    }
+    #btn-next {
+      float: right;
+      i {
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        &:hover {
+          transition: all ease-in-out 0.2s;
+          -webkit-text-stroke: 2px setColor(black);
+          color: setColor(yellow);
+        }
+        @include mediaQuery(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    .slider {
       width: 100%;
       height: auto;
-      position: relative;
-      .control {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        margin: 0;
-        z-index: 99;
-        display: block;
-      }
-      .control > button {
-        width: 4.7%;
-        height: 100%;
-        opacity: 1;
-        color: setColor(black);
-        background-color: transparent;
-        border: 0;
-        cursor: pointer;
-        font-size: 2rem;
-        outline: none;
-      }
-      #previous {
-        float: left;
-        i {
-          cursor: pointer;
-          transition: all ease-in-out 0.2s;
-          &:hover {
-            transition: all ease-in-out 0.2s;
-            -webkit-text-stroke: 2px setColor(black);
-            color: setColor(yellow);
-          }
-          @include mediaQuery(mobile) {
-            display: none;
-          }
-        }
-      }
-      #next {
-        float: right;
-        i {
-          transition: all ease-in-out 0.2s;
-          cursor: pointer;
-          &:hover {
-            transition: all ease-in-out 0.2s;
-            -webkit-text-stroke: 2px setColor(black);
-            color: setColor(yellow);
-          }
-          @include mediaQuery(mobile) {
-            display: none;
-          }
-        }
-      }
-
-      #slides {
-        width: 100%;
+      display: flex;
+      margin-left: -100%;
+      .section__slider {
+        width: auto;
+        max-width: 100%;
+        min-width: 100%;
         height: auto;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        .items-slider-desk {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
+        .img-slider-desk {
           width: 100%;
           height: auto;
-          display: visible;
-          .img-slider-desk {
-            width: 100%;
-            height: auto;
-          }
+          display: block;
           @include mediaQuery(tablet) {
             display: none;
           }
         }
-
-        .items-slider-mb {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
+        .img-slider-mb {
           width: 100%;
           height: auto;
-          display: visible;
-          .img-slider-mb {
-            width: 100%;
-            height: auto;
-          }
+          display: block;
           @media (min-width: 879px) {
             display: none;
           }
@@ -305,6 +290,7 @@ img {
   min-height: $height-primary;
   height: auto;
   padding-top: 4rem;
+  overflow-x: hidden;
   @include mediaQuery(tablet) {
     height: auto;
     padding-top: 0;
