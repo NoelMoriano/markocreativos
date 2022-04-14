@@ -222,6 +222,9 @@ img {
       cursor: pointer;
       font-size: 2rem;
       outline: none;
+      @include mediaQuery(mobile) {
+        width: 17.7%;
+      }
     }
     #btn-previous {
       float: left;
@@ -287,7 +290,6 @@ img {
 
 .container-about-us {
   width: 100%;
-  min-height: $height-primary;
   height: auto;
   padding-top: 4rem;
   overflow-x: hidden;
@@ -346,11 +348,13 @@ img {
         flex-direction: column;
         justify-content: center;
         text-align: left;
-        font-size: 1.68em;
+        font-size: 2.68em;
         font-family: $font-primary;
         padding: 0 7em 0 1em;
         font-weight: 200;
-
+        @include mediaQuery(desktopCustom) {
+          font-size: 1.68em;
+        }
         @include mediaQuery(tablet) {
           font-size: 2.7em;
           margin-bottom: 2em;
@@ -394,7 +398,7 @@ img {
 
 .container-services {
   width: 100%;
-  height: 100%;
+  height: $height-primary;
   min-height: $height-primary;
   height: auto;
   position: relative;
@@ -445,38 +449,19 @@ img {
         display: inherit;
         width: auto;
         height: auto;
-        font-size: 11vw;
         display: none;
-        font-family: $amarurgt;
-        letter-spacing: -1px;
         @include mediaQuery(tablet) {
           display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          width: 60%;
-          height: 100%;
-          padding-right: 4rem;
-          @include mediaQuery(mobile) {
-            font-size: 20vw;
-            padding-right: 2rem;
-            @include mediaQuery(mobilexs) {
-              font-size: 24vw;
-            }
-          }
+          align-items: flex-start;
+          justify-content: center;
         }
-        div {
-          width: auto;
-          height: 90px;
-          @include mediaQuery(desktop) {
-            height: 90px;
-            @include mediaQuery(tablet) {
-              height: 90px;
-              @include mediaQuery(mobile) {
-                height: 110px;
-                @include mediaQuery(mobilexs) {
-                  height: 70px;
-                }
-              }
+        img {
+          width: 80%;
+          height: auto;
+          @include mediaQuery(tablet) {
+            width: 60%;
+            @include mediaQuery(mobile) {
+              width: 70%;
             }
           }
         }
@@ -486,11 +471,12 @@ img {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
       @include mediaQuery(tablet) {
-        padding: 4rem 0 0 0;
+        padding: 4rem 1rem;
         display: block;
         @include mediaQuery(mobile) {
-          padding: 1rem 0 0 0;
+          padding: 1rem 1.5rem;
         }
       }
       .content-card-items {
@@ -611,20 +597,9 @@ img {
       .item-title {
         width: auto;
         height: auto;
-        font-size: 9vw;
-        font-family: $amarurgt;
-        letter-spacing: -7px;
-        @include mediaQuery(desktopHR) {
-          letter-spacing: -5px;
-        }
-        div {
-          height: 125px;
-          @include mediaQuery(desktopHR) {
-            height: 95px;
-            @include mediaQuery(tablet) {
-              height: 105px;
-            }
-          }
+        img {
+          width: 80%;
+          height: auto;
         }
       }
       @include mediaQuery(tablet) {
@@ -681,16 +656,14 @@ img {
       height: 420px;
       @include mediaQuery(desktopHR) {
         height: 320px;
-        margin-left: 6rem;
+        margin-left: 1rem;
         @include mediaQuery(tablet) {
           height: 230px;
-          margin-left: 2rem;
+          margin-left: 0;
           @include mediaQuery(mobile) {
-            height: 90px;
-            @include mediaQuery(mobilexs) {
-              margin-left: 0;
-              height: 80px;
-            }
+            width: 97%;
+            height: auto;
+            margin-left: 0;
           }
         }
       }
@@ -711,7 +684,8 @@ img {
         right: 15%;
         bottom: -43px;
         @include mediaQuery(mobile) {
-          height: 280px;
+          right: 0;
+          height: 27rem;
           bottom: -45px;
         }
       }
@@ -769,15 +743,19 @@ img {
   @supports (display: grid) or (display: -ms-grid) {
     .grid-area {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
       grid-auto-rows: 450px;
       justify-content: center;
       @include mediaQuery(desktopCustom) {
         grid-auto-rows: 350px;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         @include mediaQuery(tablet) {
-          grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
           grid-auto-rows: auto;
+          @include mediaQuery(mobile) {
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            grid-auto-rows: auto;
+          }
         }
       }
       #setImg-5 {
@@ -1343,15 +1321,12 @@ img {
           display: flex;
           align-items: center;
           .icon {
+            font-size: 1rem;
+
             a {
               cursor: pointer;
               text-decoration: none;
               color: setColor(black);
-              i {
-                @include mediaQuery(tablet) {
-                  font-size: 1rem;
-                }
-              }
             }
             display: flex;
             justify-content: center;

@@ -25,6 +25,20 @@
   animation: shake 0.52s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+.spin {
+  animation: rotate-infinite 1.5s linear infinite;
+  transition: all ease-in-out 0.5s;
+}
+
+@keyframes rotate-infinite {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes shake {
   10%,
   90% {

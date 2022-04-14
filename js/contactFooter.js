@@ -1,6 +1,7 @@
 const elementFormContactFooter = document.querySelector(
   "#form-contact-us-footer"
 );
+const elementBtnSendEmailFo = document.querySelector("#btn-send-message-fo");
 const elementsFormFooter = document.querySelectorAll(".contact-form__input");
 
 elementFormContactFooter.addEventListener("submit", (e) =>
@@ -10,6 +11,8 @@ elementFormContactFooter.addEventListener("submit", (e) =>
 const validateFormContact = async (e) => {
   try {
     e.preventDefault();
+
+    activeSpinnerInButton(elementBtnSendEmailFo);
 
     const result = validateFormFields([...elementsFormFooter], ["message-fo"]);
 
@@ -28,6 +31,12 @@ const validateFormContact = async (e) => {
     window.location.href = "../successful-message.html";
   } catch (e) {
     console.log("Error email send:", e);
+    notification(
+      "danger",
+      "Lo sentimos, no se pudo enviar el mensaje, intentelo mas tarde."
+    );
+  } finally {
+    activeSpinnerInButton(elementBtnSendEmailFo, false, "Enviar mensaje");
   }
 };
 

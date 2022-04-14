@@ -1,4 +1,5 @@
 const elementFormContactFx = document.querySelector("#form-contact-us-fixed");
+const elementBtnSendEmailFx = document.querySelector("#btn-send-message-fixed");
 const elementsRadioButtons = document.getElementsByName("radio-button-fixed");
 const elementsFormFixed = document.querySelectorAll(
   ".contact-form-fixed__elements"
@@ -11,6 +12,8 @@ elementFormContactFx.addEventListener("submit", (e) =>
 const validateFormContactFx = async (e) => {
   try {
     e.preventDefault();
+
+    activeSpinnerInButton(elementBtnSendEmailFx);
 
     const result = validateFormFields(
       [...elementsFormFixed],
@@ -32,6 +35,12 @@ const validateFormContactFx = async (e) => {
     window.location.href = "../successful-message.html";
   } catch (e) {
     console.log("Error email send:", e);
+    notification(
+      "danger",
+      "Lo sentimos, no se pudo enviar el mensaje, intentelo mas tarde."
+    );
+  } finally {
+    activeSpinnerInButton(elementBtnSendEmailFx, false, "Enviar mensaje");
   }
 };
 

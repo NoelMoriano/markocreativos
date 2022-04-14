@@ -106,3 +106,74 @@ const radioButtonsValue = (radioButtons) =>
   [...radioButtons].find((radioButton) =>
     radioButton.checked ? radioButton.value : null
   ).value;
+
+//**ACTIVE BUTTONS SPINNER**
+const activeSpinnerInButton = (
+  btnElement,
+  isVisible = true,
+  defaultText,
+  loadingText = `<i class="fas fa-circle-notch spin" id="btnspinner"></i> Enviando...`
+) => {
+  //Spinner no visible
+  if (!isVisible) {
+    btnElement.disabled = false;
+    return (btnElement.innerHTML = `<div>${defaultText}</div>`);
+  }
+
+  //Spinner visible
+  btnElement.disabled = true;
+  btnElement.innerHTML = `<div><span
+        class="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      ${loadingText}</div>`;
+};
+
+const isVisibleSpinner = (elementSpinner, isVisible = true) => {
+  if (isVisible) {
+    elementSpinner.classList.add("visible");
+    elementSpinner.classList.remove("none");
+  } else {
+    elementSpinner.classList.remove("visible");
+    elementSpinner.classList.add("none");
+  }
+};
+
+const notification = (notificationType, description) => {
+  switch (notificationType) {
+    case "danger":
+      return showNotification("notification-danger", description);
+    case "success":
+      return showNotification("notification-success", description);
+    case "warning":
+      return showNotification("notification-warning", description);
+    case "info":
+      return showNotification("notification-info", description);
+    case "primary":
+      return showNotification("notification-primary", description);
+    default:
+      return showNotification("notification-info", description);
+  }
+};
+
+const showNotification = (notificationType, description) => {
+  const elementNotification = document.querySelector(`#${notificationType}`);
+  const elementNotificationContent = document.querySelector(
+    `#${notificationType}-content-text`
+  );
+  const elementNotificationClose = document.querySelector(
+    `#${notificationType}-btn-close`
+  );
+
+  removeClassNames(["none"], elementNotification);
+  elementNotificationContent.innerText = description;
+
+  elementNotificationClose.addEventListener("click", () =>
+    addClassNames(["none"], elementNotification)
+  );
+
+  setTimeout(() => {
+    addClassNames(["none"], elementNotification);
+  }, 3000);
+};
