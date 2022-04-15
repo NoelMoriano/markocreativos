@@ -377,6 +377,7 @@ img {
       background: linear-gradient(90deg, setColor(yellow) 75%, transparent 70%);
       position: relative;
       @include mediaQuery(tablet) {
+        justify-content: flex-end;
         background: linear-gradient(
           90deg,
           setColor(yellow) 75%,
@@ -476,7 +477,7 @@ img {
         padding: 4rem 1rem;
         display: block;
         @include mediaQuery(mobile) {
-          padding: 1rem 1.5rem;
+          padding: 1rem;
         }
       }
       .content-card-items {
@@ -700,6 +701,8 @@ img {
   position: relative;
   background: setColor(black);
   .grid-container {
+    background: url("../images/otros/marca-de-agua-logo.webp");
+    background-size: 100px;
     width: 100%;
     max-width: 2200px;
     margin: 0 auto;
@@ -825,7 +828,6 @@ img {
     color: #ffffff;
     backface-visibility: hidden;
     text-align: left;
-    padding: 0 1rem;
   }
 
   figure figcaption::before,
@@ -960,34 +962,46 @@ img {
     cursor: pointer;
   }
 
-  figure:hover h2 {
-    background: none;
-    color: #fff;
-    transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
-  }
-
-  figure:hover figcaption::before,
-  figure:hover p,
-  figure:hover .grid-button-wrapper {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
   .grid-container {
     #grid-area-jobs-desktop {
       @include mediaQuery(tablet) {
-        display: none !important;
+        display: none;
       }
       @media (min-width: 879px) {
-        display: grid !important;
+        display: grid;
+        figure:hover h2 {
+          background: none;
+          color: #fff;
+          transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+        }
+
+        figure:hover figcaption::before,
+        figure:hover p,
+        figure:hover .grid-button-wrapper {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
       }
     }
     #grid-area-jobs-mobile {
       @include mediaQuery(tablet) {
-        display: grid !important;
+        display: grid;
+
+        figure h2 {
+          background: none;
+          color: #fff;
+          transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+        }
+
+        figure figcaption::before,
+        figure p,
+        figure .grid-button-wrapper {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
       }
       @media (min-width: 879px) {
-        display: none !important;
+        display: none;
       }
     }
   }
