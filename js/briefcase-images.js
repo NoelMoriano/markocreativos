@@ -1,4 +1,4 @@
-let briefcaseImages = [
+let briefcaseImagesDesktop = [
   {
     id: "1",
     category: "identidad",
@@ -264,6 +264,148 @@ let briefcaseImages = [
     imagesSecondary: [
       { name: "c-1", url: "c-1.webp" },
       { name: "c-2", url: "c-2.webp" },
+    ],
+  },
+];
+
+let briefcaseImagesMobile = [
+  {
+    id: "1",
+    category: "identidad",
+    namePrimary: "Creamos Marca",
+    urlPrimary: "strong.webp",
+    imagesSecondary: [
+      { name: "strong", url: "strong.webp" },
+      { name: "barber shop sebas", url: "barbershopsebas.webp" },
+      { name: "body care", url: "bodycare.webp" },
+      { name: "cat dog", url: "catdog.webp" },
+      { name: "directo", url: "directo2.webp" },
+    ],
+  },
+  {
+    id: "2",
+    category: "branding",
+    namePrimary: "Identidad Corporativa",
+    urlPrimary: "creativestudio.webp",
+    imagesSecondary: [
+      { name: "creative estudio", url: "creativestudio.webp" },
+      { name: "mac", url: "mac.webp" },
+      { name: "directo", url: "directo.webp" },
+      { name: "acuarius", url: "acuarius.webp" },
+      { name: "labok", url: "labok.webp" },
+    ],
+  },
+  {
+    id: "3",
+    category: "branding",
+    namePrimary: "Identidad Corporativa",
+    urlPrimary: "creativestudio.webp",
+    imagesSecondary: [
+      { name: "creative estudio", url: "creativestudio.webp" },
+      { name: "mac", url: "mac.webp" },
+      { name: "directo", url: "directo.webp" },
+      { name: "acuarius", url: "acuarius.webp" },
+      { name: "labok", url: "labok.webp" },
+    ],
+  },
+  {
+    id: "4",
+    category: "impresos",
+    namePrimary: "Flyer / Brochure",
+    urlPrimary: "volanteesika.webp",
+    imagesSecondary: [
+      { name: "volanteesika.webp", url: "volanteesika.webp" },
+      { name: "triptico premios juntos", url: "tripticopremiosjuntos.webp" },
+      { name: "volante power gym", url: "volantepowergym.webp" },
+      { name: "room 21b", url: "room21b.webp" },
+      { name: "volante unica", url: "volanteunica.webp" },
+    ],
+  },
+
+  {
+    id: "5",
+    category: "prensa",
+    namePrimary: "Magazine",
+    urlPrimary: "lebellederm.webp",
+    imagesSecondary: [
+      { name: "lebel lederm", url: "lebellederm.webp" },
+      { name: "brucke cy-zone", url: "bruckecy-zone.webp" },
+      { name: "esika reyna", url: "esikareyna.webp" },
+      { name: "lebel revista", url: "lebelchicarevista.webp" },
+      { name: "belcorp", url: "belcorp.webp" },
+    ],
+  },
+  {
+    id: "6",
+    category: "image-a",
+    namePrimary: "image-a",
+    urlPrimary: "a-1.webp",
+    urlSecond: "a-2.webp",
+    imagesSecondary: [
+      { name: "a-1", url: "a-1.webp" },
+      { name: "a-2", url: "a-2.webp" },
+    ],
+  },
+  {
+    id: "7",
+    category: "indoor",
+    namePrimary: "Poster / Display",
+    urlPrimary: "chicabanner.webp",
+    imagesSecondary: [
+      { name: "chica banner", url: "chicabanner.webp" },
+      { name: "afiche coqueto", url: "afichecoqueta.webp" },
+      { name: "banner esika", url: "banneresika.webp" },
+      { name: "banner scotiabank", url: "bannerscotiabank.webp" },
+      { name: "colgante banco", url: "colgantebanco.webp" },
+    ],
+  },
+  {
+    id: "8",
+    category: "outdoor",
+    namePrimary: "Banner / Billboard / Flags",
+    urlPrimary: "outdoorbanner.webp",
+    imagesSecondary: [
+      { name: "outdoor banner", url: "outdoorbanner.webp" },
+      { name: "valla lebel", url: "vallalebel.webp" },
+      { name: "paradero dental", url: "paraderodental.webp" },
+      { name: "valla movil chico flip", url: "vallamovilchicoflip.webp" },
+      { name: "valla esika coqueto", url: "Vallaesikacoqueto.webp" },
+    ],
+  },
+  {
+    id: "9",
+    category: "web",
+    namePrimary: "Social Media",
+    urlPrimary: "postvalora.webp",
+    imagesSecondary: [
+      { name: "post valora", url: "postvalora2.webp" },
+      { name: "productos mac", url: "productosmac.webp" },
+      { name: "web nutricion", url: "webnutriciongym.webp" },
+      { name: "web banco financiero", url: "webbancofinanciero2.webp" },
+    ],
+  },
+  {
+    id: "10",
+    category: "miseláneo",
+    namePrimary: "Branding",
+    urlPrimary: "jehovadioshombre.webp",
+    imagesSecondary: [
+      { name: "jehovadioshombre.webp", url: "jehovadioshombre.webp" },
+      { name: "taza", url: "taza.webp" },
+      { name: "tar", url: "tar.webp" },
+      { name: "cristo mujer", url: "cristomujer.webp" },
+      { name: "triptico esika", url: "tripticoesika.webp" },
+    ],
+  },
+  {
+    id: "11",
+    category: "image-b",
+    namePrimary: "image-b",
+    urlPrimary: "b-1.webp",
+    urlSecond: "b-2.webp",
+    imagesSecondary: [
+      { name: "b-1", url: "b-1.webp" },
+      { name: "b-2", url: "b-2.webp" },
     ],
   },
 ];

@@ -802,7 +802,6 @@ img {
       flex-direction: column;
     }
     .grid-3 {
-      order: -1;
       height: 500px;
     }
   }
@@ -973,6 +972,25 @@ img {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+
+  .grid-container {
+    #grid-area-jobs-desktop {
+      @include mediaQuery(tablet) {
+        display: none !important;
+      }
+      @media (min-width: 879px) {
+        display: grid !important;
+      }
+    }
+    #grid-area-jobs-mobile {
+      @include mediaQuery(tablet) {
+        display: grid !important;
+      }
+      @media (min-width: 879px) {
+        display: none !important;
+      }
+    }
+  }
 }
 
 .container-customers {
@@ -1016,7 +1034,7 @@ img {
           @include mediaQuery(tablet) {
             padding: 0 3rem;
             @include mediaQuery(mobile) {
-              padding: 0 1.5rem;
+              padding: 0 1.8rem;
             }
           }
         }
@@ -1027,9 +1045,9 @@ img {
           @include mediaQuery(desktopHR) {
             font-size: 3.1vw;
             @include mediaQuery(tablet) {
-              font-size: 5vw;
+              font-size: 8vw;
               @include mediaQuery(mobile) {
-                font-size: 6vw;
+                font-size: 8vw;
               }
             }
           }
@@ -1040,9 +1058,9 @@ img {
           @include mediaQuery(desktopHR) {
             font-size: 6vw;
             @include mediaQuery(tablet) {
-              font-size: 10vw;
+              font-size: 17vw;
               @include mediaQuery(mobile) {
-                font-size: 12vw;
+                font-size: 17vw;
               }
             }
           }
@@ -1106,15 +1124,31 @@ img {
       align-items: center;
       position: relative;
       @include mediaQuery(tablet) {
-        justify-content: flex-end;
+        justify-content: center;
       }
-      img {
-        position: absolute;
+
+      .img-customer-conejo {
         width: auto;
         height: 90%;
+        @media (min-width: 879px) {
+          display: none;
+        }
+        @include mediaQuery(tablet) {
+          display: flex;
+          width: 70%;
+          height: auto;
+        }
+      }
+      .img-customer-peugeot {
+        width: auto;
+        height: 90%;
+        @media (min-width: 879px) {
+          display: flex;
+        }
         @include mediaQuery(desktopCustom) {
           height: 85%;
           @include mediaQuery(tablet) {
+            display: none;
             position: relative;
             height: 30vh;
           }
