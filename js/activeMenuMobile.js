@@ -9,18 +9,22 @@ visibleMenuMobile.addEventListener("click", () => activeMenuMobile());
 notVisibleMenuMobile.addEventListener("click", () => desactiveMenuMobile());
 
 const activeMenuMobile = () => {
-  MenuMobile.style.display = "inherit";
+  addClassNames(["menu-mobile-open"], MenuMobile);
+  removeClassNames(["menu-mobile-close", "none"], MenuMobile);
 };
 
 const addedEventItems = () => {
   for (let i = 0; i <= itemsDisableMenuMobile.length; i++) {
     itemsDisableMenuMobile[i] &&
-      itemsDisableMenuMobile[i].addEventListener("click", desactiveMenuMobile);
+      itemsDisableMenuMobile[i].addEventListener("click", () =>
+        desactiveMenuMobile()
+      );
   }
 };
 
 const desactiveMenuMobile = () => {
-  MenuMobile.style.display = "none";
+  addClassNames(["menu-mobile-close"], MenuMobile);
+  removeClassNames(["menu-mobile-open", "visible"], MenuMobile);
 };
 
 addedEventItems();
