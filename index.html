@@ -526,6 +526,39 @@
               </script>
             </div>
           </div>
+
+          <div class="container-carousel" id="container-carousel">
+            <div class="control">
+              <button
+                class="btn-previous-carousel"
+                id="btn-previous-carousel"
+                aria-label="arrow left"
+              >
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button
+                class="btn-next-carousel"
+                id="btn-next-carousel"
+                aria-label="arrow right"
+              >
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+            <!-- IMAGES SLIDERS -->
+            <div class="carousel-customers" id="carousel-customers">
+              <script>
+                let elementCarouselCustomers = document.querySelector(
+                  "#carousel-customers"
+                );
+                for (let data of customers) {
+                  elementCarouselCustomers.innerHTML += `
+                    <div class="section__carousel">
+                      <img loading="lazy" class="wow animate__animated animate__zoomIn img-carousel" data-wow-duration="1s" data-wow-delay="1s" src="images/customers-logos/${data.name}.webp" alt="${data.name} MarkoCreativos" width="100%" height="100%">
+                    </div>`;
+                }
+              </script>
+            </div>
+          </div>
         </div>
         <div class="content-img-customer">
           <img
@@ -1024,6 +1057,7 @@
     <script src="./js/global.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/carouselCustomers.js"></script>
     <script src="./js/simpleParallax.min.js"></script>
     <script src="./js/animationHomePage.js"></script>
     <script src="./js/activeMenuMobile.js"></script>
