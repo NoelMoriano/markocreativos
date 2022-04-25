@@ -43,11 +43,15 @@ const onPreviosClickCarousel = (isActive = true) => {
 const setIntervalCarousel = () =>
   setInterval(() => {
     onNextClickCarousel();
-  }, 3000);
+  }, 2000);
 
 let clearSetIntervalCarousel = null;
 
 clearSetIntervalCarousel = setIntervalCarousel();
+
+if (document.body.clientWidth >= 879) {
+  clearInterval(clearSetIntervalCarousel);
+}
 
 elementCarouselContainer.addEventListener("mouseenter", () =>
   clearInterval(clearSetIntervalCarousel)

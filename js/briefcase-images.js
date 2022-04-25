@@ -240,6 +240,7 @@ let briefcaseImagesDesktop = [
       { name: "valla doble cy-zone", url: "valladoblecyzone.webp" },
       { name: "bus stop muay thai", url: "busstopmuaythai.webp" },
       { name: "bus stop esika", url: "busstopesika.webp" },
+      { name: "paneles", url: "paneles.webp" },
     ],
   },
   {

@@ -175,12 +175,16 @@
               src="images/sliders/slider-desk-1.webp"
               alt="slider 1"
               class="img-slider-desk"
+              width="100%"
+              height="100%"
             />
             <img
               loading="lazy"
               src="images/sliders/slider-mb-1.webp"
               alt="slider 1"
               class="img-slider-mb"
+              width="100%"
+              height="100%"
             />
           </div>
           <div class="section__slider">
@@ -189,12 +193,16 @@
               src="images/sliders/slider-desk-2.webp"
               alt="slider 2"
               class="img-slider-desk"
+              width="100%"
+              height="100%"
             />
             <img
               loading="lazy"
               src="images/sliders/slider-mb-2.webp"
               alt="slider 2"
               class="img-slider-mb"
+              width="100%"
+              height="100%"
             />
           </div>
           <div class="section__slider">
@@ -203,34 +211,19 @@
               src="images/sliders/slider-desk-3.webp"
               alt="slider 3"
               class="img-slider-desk"
+              width="100%"
+              height="100%"
             />
             <img
               loading="lazy"
               src="images/sliders/slider-mb-3.webp"
               alt="slider 3"
               class="img-slider-mb"
+              width="100%"
+              height="100%"
             />
           </div>
         </div>
-
-        <!--              <img
-                loading="lazy"
-                src="images/sliders/slider-mb-1.webp"
-                alt="slider 1"
-                width="100%"
-                height="100%"
-                class="img-slider-mb"
-              />
-              <img
-                loading="lazy"
-                src="images/sliders/slider-mb-2.webp"
-                alt="slider 1"
-                width="100%"
-                height="100%"
-                class="img-slider-mb"
-              /> -->
-
-        <!-- <li class="item-slider-3"></li> -->
       </div>
     </section>
 
@@ -300,6 +293,8 @@
               src="./images/sections/services/title-services.webp"
               alt="servicios markocreativos"
               class="img-title-services"
+              width="100%"
+              height="100%"
             />
           </div>
         </div>
@@ -553,7 +548,7 @@
                 for (let data of customers) {
                   elementCarouselCustomers.innerHTML += `
                     <div class="section__carousel">
-                      <img loading="lazy" class="wow animate__animated animate__zoomIn img-carousel" data-wow-duration="1s" data-wow-delay="1s" src="images/customers-logos/${data.name}.webp" alt="${data.name} MarkoCreativos" width="100%" height="100%">
+                      <img loading="lazy" class="img-carousel" src="images/customers-logos/${data.name}.webp" alt="${data.name} MarkoCreativos" width="100%" height="100%">
                     </div>`;
                 }
               </script>
@@ -933,8 +928,8 @@
           data-dismiss="alert"
           id="notification-success-btn-close"
         >
-          <span aria-hidden="true"
-            ><a> <i class="fa fa-times greencross"></i> </a
+          <span aria-hidden="true"></span>
+            <i class="fa fa-times greencross"></i
           ></span>
           <span class="sr-only">Close</span>
         </button>
