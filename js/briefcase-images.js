@@ -110,7 +110,7 @@ let briefcaseImagesDesktop = [
       { name: "valla lebel", url: "vallalebel.webp" },
       { name: "paradero dental", url: "paraderodental.webp" },
       { name: "valla movil chico flip", url: "vallamovilchicoflip.webp" },
-      { name: "valla esika coqueto", url: "Vallaesikacoqueto.webp" },
+      { name: "valla esika coqueto", url: "vallaesikacoqueto.webp" },
     ],
   },
   {
