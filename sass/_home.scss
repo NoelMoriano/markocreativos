@@ -1395,10 +1395,10 @@ img {
               width: 100%;
               padding: 0 0 1rem 0;
               label {
-                color: setColor(white);
+                color: setColor(yellow);
                 font-weight: 500;
                 text-align: left;
-                font-size: 0.9rem;
+                font-size: 1rem;
                 @include mediaQuery(desktopCustom) {
                   font-size: 0.8rem;
                 }
