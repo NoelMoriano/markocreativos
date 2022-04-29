@@ -269,9 +269,32 @@ let briefcaseImagesDesktop = [
   },
 ];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let briefcaseImagesMobile = [
   {
-    id: "1",
+    id: "12",
     category: "identidad",
     namePrimary: "Creamos Marca",
     urlPrimary: "strong.webp",
@@ -284,7 +307,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "2",
+    id: "10",
     category: "branding",
     namePrimary: "Identidad Corporativa",
     urlPrimary: "creativestudio.webp",
@@ -298,19 +321,6 @@ let briefcaseImagesMobile = [
   },
   {
     id: "3",
-    category: "branding",
-    namePrimary: "Identidad Corporativa",
-    urlPrimary: "creativestudio.webp",
-    imagesSecondary: [
-      { name: "creative estudio", url: "creativestudio.webp" },
-      { name: "mac", url: "mac.webp" },
-      { name: "directo", url: "directo.webp" },
-      { name: "acuarius", url: "acuarius.webp" },
-      { name: "labok", url: "labok.webp" },
-    ],
-  },
-  {
-    id: "4",
     category: "impresos",
     namePrimary: "Flyer / Brochure",
     urlPrimary: "volanteesika.webp",
@@ -324,7 +334,7 @@ let briefcaseImagesMobile = [
   },
 
   {
-    id: "5",
+    id: "7",
     category: "prensa",
     namePrimary: "Magazine",
     urlPrimary: "lebellederm.webp",
@@ -337,7 +347,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "6",
+    id: "5",
     category: "image-a",
     namePrimary: "image-a",
     urlPrimary: "a-1.webp",
@@ -348,7 +358,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "7",
+    id: "8",
     category: "indoor",
     namePrimary: "Poster / Display",
     urlPrimary: "chicabanner.webp",
@@ -361,7 +371,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "8",
+    id: "9",
     category: "outdoor",
     namePrimary: "Banner / Billboard / Flags",
     urlPrimary: "outdoorbanner.webp",
@@ -374,7 +384,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "9",
+    id: "17",
     category: "web",
     namePrimary: "Social Media",
     urlPrimary: "postvalora.webp",
@@ -386,7 +396,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "10",
+    id: "4",
     category: "miseláneo",
     namePrimary: "Branding",
     urlPrimary: "jehovadioshombre.webp",
@@ -399,7 +409,7 @@ let briefcaseImagesMobile = [
     ],
   },
   {
-    id: "11",
+    id: "13",
     category: "image-b",
     namePrimary: "image-b",
     urlPrimary: "b-1.webp",

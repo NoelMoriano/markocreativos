@@ -441,21 +441,28 @@
               "#grid-area-jobs-desktop"
             );
 
+            const imagesOnMouseEffectDesk = ["5", "13", "21"];
+
             briefcaseImagesDesktop.map(
               (item, index) =>
                 (gridAreaJobsDesktop.innerHTML += `<figure class="col grid-${
                   index + 1
                 }" id="${
-                  [5, 13, 21].includes(index + 1) && `onMouseEfect-${index + 1}`
+                  imagesOnMouseEffectDesk.includes(item.id)
+                    ? `onMouseEfect-${item.id}`
+                    : item.id
                 }" onclick="viewAlbumImg('${
-                  [5, 13, 21].includes(index + 1) ? [] : item.id
+                  imagesOnMouseEffectDesk.includes(item.id) ? [] : item.id
                 }')">
             	<img loading="lazy" src="images/briefcase/${item.urlPrimary}" id="${
-                  [5, 13, 21].includes(index + 1) && `setImg-${index + 1}`
+                  imagesOnMouseEffectDesk.includes(item.id) &&
+                  `setImg-${item.id}`
                 }" class="wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" alt="${
                   item.namePrimary
                 } MarkoCreativos" width="100%" height="100%">
-            	<figcaption ${[5, 13, 21].includes(index + 1) && "hidden='true'"}>
+            	<figcaption ${
+                imagesOnMouseEffectDesk.includes(item.id) && "hidden='true'"
+              }>
             		<div class="grid-button-wrapper">
             			<p>${item.category.toUpperCase()}</p>
             			<h3>${item.namePrimary}</h3>
@@ -471,28 +478,37 @@
               "#grid-area-jobs-mobile"
             );
 
-            briefcaseImagesMobile.map(
-              (item, index) =>
-                (gridAreaJobsMobile.innerHTML += `<figure class="col grid-${
-                  index + 1
-                }" id="${
-                  [6, 11].includes(index + 1) && `onMouseEfect-${index + 1}`
-                }" onclick="viewAlbumImg('${
-                  [6, 11].includes(index + 1) ? [] : item.id
-                }')">
+            const imagesOnMouseEffectMb = ["5", "13"];
+
+            briefcaseImagesMobile
+              .sort((a, b) => a.id + b.id)
+              .map(
+                (item, index) =>
+                  (gridAreaJobsMobile.innerHTML += `<figure class="col grid-${
+                    index + 1
+                  }" id="${
+                    imagesOnMouseEffectMb.includes(item.id)
+                      ? `onMouseEfect-${item.id}`
+                      : item.id
+                  }" onclick="viewAlbumImg('${
+                    imagesOnMouseEffectMb.includes(item.id) ? [] : item.id
+                  }')">
             	<img loading="lazy" src="images/briefcase/${item.urlPrimary}" id="${
-                  [6, 11].includes(index + 1) && `setImg-${index + 1}`
-                }" class="wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" alt="${
-                  item.namePrimary
-                } MarkoCreativos" width="100%" height="100%">
-            	<figcaption ${[6, 11].includes(index + 1) && "hidden='true'"}>
+                    imagesOnMouseEffectMb.includes(item.id) &&
+                    `setImg-${item.id}`
+                  }" class="wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" alt="${
+                    item.namePrimary
+                  } MarkoCreativos" width="100%" height="100%">
+            	<figcaption ${
+                imagesOnMouseEffectMb.includes(item.id) && "hidden='true'"
+              }>
             		<div class="grid-button-wrapper">
             			<p>${item.category.toUpperCase()}</p>
             			<h3>${item.namePrimary}</h3>
             		</div>
             	</figcaption>
             </figure>`)
-            );
+              );
           </script>
         </div>
       </section>

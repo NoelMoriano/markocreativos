@@ -86,29 +86,21 @@ const stopTemporizador = () => clearInterval(temporizador);
 
 /*****************************EFECTO ONMOUSE*****************************/
 let setImg5 = document.querySelector("#setImg-5");
-let setImg6 = document.querySelector("#setImg-6");
-let setImg11 = document.querySelector("#setImg-11");
 let setImg13 = document.querySelector("#setImg-13");
 let setImg21 = document.querySelector("#setImg-21");
 
 let onMouseEfect5 = document.querySelector("#onMouseEfect-5");
-let onMouseEfect6 = document.querySelector("#onMouseEfect-6");
-let onMouseEfect11 = document.querySelector("#onMouseEfect-11");
 let onMouseEfect13 = document.querySelector("#onMouseEfect-13");
 let onMouseEfect21 = document.querySelector("#onMouseEfect-21");
 
 const filterDataImg = (idImg) => {
   switch (idImg) {
     case "setImg-5":
-      return briefcaseImagesDesktop[4];
-    case "setImg-6":
-      return briefcaseImagesMobile[5];
-    case "setImg-11":
-      return briefcaseImagesMobile[10];
+      return briefcaseImagesDesktop[4] || briefcaseImagesMobile[4];
     case "setImg-13":
-      return briefcaseImagesDesktop[12];
+      return briefcaseImagesDesktop[12]  || briefcaseImagesMobile[12];
     case "setImg-21":
-      return briefcaseImagesDesktop[20];
+      return briefcaseImagesDesktop[20]  || briefcaseImagesMobile[20];
   }
 };
 
@@ -130,16 +122,6 @@ onMouseEfect5 &&
   onMouseEfect5.addEventListener("mouseover", () => onMouseImgOver(setImg5));
 onMouseEfect5 &&
   onMouseEfect5.addEventListener("mouseout", () => onMouseImgOut(setImg5));
-
-onMouseEfect6 &&
-  onMouseEfect6.addEventListener("mouseover", () => onMouseImgOver(setImg6));
-onMouseEfect6 &&
-  onMouseEfect6.addEventListener("mouseout", () => onMouseImgOut(setImg6));
-
-onMouseEfect11 &&
-  onMouseEfect11.addEventListener("mouseover", () => onMouseImgOver(setImg11));
-onMouseEfect11 &&
-  onMouseEfect11.addEventListener("mouseout", () => onMouseImgOut(setImg11));
 
 onMouseEfect13 &&
   onMouseEfect13.addEventListener("mouseover", () => onMouseImgOver(setImg13));
