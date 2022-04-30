@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kob5svj0foq8/public_html/markocreativos.com/ #Add /<sub_folder> if required
-    - /bin/rm -Rf $DEPLOYPATH
-    - /bin/mkdir $DEPLOYPATH
-    - /bin/cp -R * $DEPLOYPATH
-    #- /bin/cp -a * $DEPLOYPATH
+    #- /bin/rm -Rf $DEPLOYPATH
+    #- /bin/mkdir $DEPLOYPATH
+    #- /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -a * $DEPLOYPATH
