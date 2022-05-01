@@ -10,7 +10,6 @@ body {
   position: relative;
   font-size: 15px;
   overflow-x: hidden;
-  background: #000;
   @include mediaQuery(desktopCustom) {
     font-size: 13px;
     @include mediaQuery(tablet) {
