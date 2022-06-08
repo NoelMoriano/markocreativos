@@ -49,7 +49,11 @@ const mapContactFx = (elementsFormFixedValues) => ({
   lastName: elementsFormFixedValues[1],
   company: elementsFormFixedValues[2],
   email: elementsFormFixedValues[3],
-  phone: elementsFormFixedValues[4],
+  phone: {
+  number: elementsFormFixedValues[4],
+  countryCode: "+51"
+  },
   service: elementsFormFixedValues[5],
   contactPreference: radioButtonsValue(elementsRadioButtons),
+  hostname: "markocreativos"
 });

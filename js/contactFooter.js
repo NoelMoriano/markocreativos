@@ -43,7 +43,11 @@ const validateFormContact = async (e) => {
 const mapContact = (elementsFormFooterValues) => ({
   firstName: elementsFormFooterValues[0],
   lastName: elementsFormFooterValues[1],
-  phone: elementsFormFooterValues[2],
+  phone: {
+    number: elementsFormFixedValues[2],
+    countryCode: "+51"
+    },
   email: elementsFormFooterValues[3],
   message: elementsFormFooterValues[4] || null,
+  hostname: "markocreativos"
 });
