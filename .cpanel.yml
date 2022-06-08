@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kob5svj0foq8/public_html/markocreativos.com
+    - /bin/cp -R * $DEPLOYPATH
