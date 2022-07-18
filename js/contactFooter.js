@@ -44,7 +44,7 @@ const mapContact = (elementsFormFooterValues) => ({
   firstName: elementsFormFooterValues[0],
   lastName: elementsFormFooterValues[1],
   phone: {
-    number: elementsFormFixedValues[2],
+    number: elementsFormFooterValues[2],
     countryCode: "+51"
     },
   email: elementsFormFooterValues[3],
